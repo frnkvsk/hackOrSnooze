@@ -248,6 +248,7 @@ async function submitStoryHandler(token, story) {
   if(res.status == 201) {
     $submitForm.hide();
     generateStories("far fa-star stars");
+    story["storyId"] = res.data.story.storyId;
     currentUser.ownStories.push(story);
     localStorage.setItem("ownStories", currentUser.ownStories);
   }
