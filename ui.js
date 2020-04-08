@@ -248,6 +248,7 @@ async function submitStoryHandler(token, story) {
   if(res.status == 201) {
     $submitForm.hide();
     generateStories("far fa-star stars");
+    story["storyId"] = res.data.story.storyId;
     currentUser.ownStories.push(story);
     localStorage.setItem("ownStories", currentUser.ownStories);
   }
@@ -306,7 +307,7 @@ const reloadOwn = () => {
   // empty $ownStories UL
   $ownStories.empty();
   // loop through all of our stories and generate HTML for them
-  for (let story of currentUser.ownStories) {      
+  for (let story of currentUser.ownStories) {  
     const result = generateStoryHTML(story, "fa-trash-alt fas trash-myown");
     $ownStories.append(result);
   }
