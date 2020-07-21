@@ -58,6 +58,10 @@ nav {
   background-color: #f6f6ef;
 }
 
+.hidden {
+  display: none;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -207,14 +211,6 @@ form > hr {
 #user-profile > * {
   margin: 10px 0;
 }
-
-
-.hidden {
-  display: none;
-}
-
-
-
 
 /** responsive queries for tightening things up for mobile. */
 
